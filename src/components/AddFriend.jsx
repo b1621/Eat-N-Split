@@ -14,7 +14,7 @@ const AddFriend = ({ friends, setFriends, setOpenAddFriend }) => {
     setOpenAddFriend(false);
   };
   return (
-    <div className=' bg-gray-800 bg-cyan-900 bg-sky-950 bg-slate-800 px-10 py-5'>
+    <div className='  bg-slate-800 px-10 py-5'>
       <form onSubmit={handleSubmit}>
         <div className=' grid grid-cols-3 px-3 py-5'>
           <span> 🙍‍♂️🙍‍♀️ Friend Name</span>

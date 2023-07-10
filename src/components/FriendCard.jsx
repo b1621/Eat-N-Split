@@ -1,6 +1,6 @@
 const FriendCard = ({ friend }) => {
   return (
-    <div className='bg-slate-800 p-5 my-10'>
+    <div className='bg-slate-800  p-5 my-7'>
       <div className='flex flex-row justify-between'>
         <div className='flex items-center'>
           <div className='h-12 w-12 rounded-full overflow-hidden'>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FriendsList from "./components/FriendsList";
+import SplitBill from "./components/SplitBill";
 
 function App() {
   const initialFriends = [
@@ -38,12 +39,12 @@ function App() {
             </button>
           </div> */}
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-5  my-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-24  my-10'>
             <div className=''>
               <FriendsList friends={friends} setFriends={setFriends} />
             </div>
-            <div className=' border px-10 lg:px-0'>
-              <div className=' bg-slate-800 p-5 my-10'>some text</div>
+            <div className='px-10 py-10 lg:px-0'>
+              <SplitBill />
             </div>
           </div>
         </div>
