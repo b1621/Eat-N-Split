@@ -5,33 +5,33 @@ const SplitBill = () => {
       <form className='grid grid-cols-3 gap-x-3 gap-y-5'>
         <label>💰 Bill Value</label>
         <input
-          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2'
+          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2 rounded'
           type='text'
         />
 
         <label> 👨 Your Expense</label>
         <input
-          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2'
+          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2 rounded'
           type='text'
         />
 
         <label> 👩‍💼👨‍💼 X's Expense</label>
         <input
-          className='text-gray-800 px-3 py-1  outline-none col-span-2'
+          className='text-gray-800 px-3 py-1 rounded  outline-none col-span-2'
           type='text'
           disabled
         />
 
         <label>🤑 Who is paying the bill? </label>
         <select
-          className='outline-none text-gray-800 bg-slate-300 px-3 py col-span-2'
+          className='outline-none text-gray-800 bg-slate-300 px-3 py-1 rounded col-span-2'
           name=''
           id=''
         >
           <option className='py-1' value='you'>
             You
           </option>
-          <option value='friend'>Friend</option>
+          <option value='friend'>X</option>
         </select>
         <button className=' col-start-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-7 rounded '>
           Split Bill

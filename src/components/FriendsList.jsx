@@ -5,6 +5,9 @@ import FriendCard from "./FriendCard";
 const FriendsList = ({ friends, setFriends }) => {
   //   console.log(initialFriends);
   const [openAddFriend, setOpenAddFriend] = useState(false);
+  const handleAddFriend = (newFriend) => {
+    setFriends([...friends, newFriend]);
+  };
   return (
     <div className=' '>
       {friends.map((friend) => (
@@ -21,8 +24,7 @@ const FriendsList = ({ friends, setFriends }) => {
       </div>
       {openAddFriend && (
         <AddFriend
-          friends={friends}
-          setFriends={setFriends}
+          onAddFriend={handleAddFriend}
           setOpenAddFriend={setOpenAddFriend}
         />
       )}

@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <div className='absolute w-screen bg-slate-900 text-white min-h-screen'>
-        <div className=' w-[80%] mx-auto'>
+        <div className=' w-[85%] mx-auto'>
           {/* <div className=' bg-slate-800 p-5 m-10'>
             <p>Name</p>
             <p className=' text-green-700'>You owe clark</p>

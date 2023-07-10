@@ -1,16 +1,26 @@
 import { useState } from "react";
 
-const AddFriend = ({ friends, setFriends, setOpenAddFriend }) => {
+const AddFriend = ({ onAddFriend, setOpenAddFriend }) => {
   const [friendName, setFriendName] = useState("");
-  const [friendImage, setFriendImage] = useState(
-    "https://cdn-icons-png.flaticon.com/512/145/145843.png?w=740&t=st=1688991122~exp=1688991722~hmac=b7f96d4e0eea19d92d88b36db4afd493cc2bacc1b8ded5fa5521d323d0eb7485"
-  );
+  const [friendImage, setFriendImage] = useState("https://i.pravatar.cc/48");
+  // const [friendImage, setFriendImage] = useState(
+  //   "https://cdn-icons-png.flaticon.com/512/145/145843.png?w=740&t=st=1688991122~exp=1688991722~hmac=b7f96d4e0eea19d92d88b36db4afd493cc2bacc1b8ded5fa5521d323d0eb7485"
+  // );
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFriends([
-      ...friends,
-      { name: friendName, image: friendImage, balance: 0 },
-    ]);
+
+    if (!friendName || !friendImage) return;
+
+    const newFriend = {
+      name: friendName,
+      image: friendImage,
+      balance: 0,
+      id: crypto.randomUUID(),
+    };
+    onAddFriend(newFriend);
+    // setFriendName("");
+    // setFriendImage("https://i.pravatar.cc/48");
     setOpenAddFriend(false);
   };
   return (
