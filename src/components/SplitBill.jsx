@@ -1,39 +1,41 @@
-const SplitBill = () => {
+const SplitBill = ({ selectedFriend }) => {
   return (
-    <div className=' bg-slate-800 py-10 px-5'>
-      <h2 className='text-center text-3xl pb-10'>SPLIT A BILL WITH X</h2>
-      <form className='grid grid-cols-3 gap-x-3 gap-y-5'>
+    <div className=" bg-slate-800 py-10 px-5">
+      <h2 className="text-center text-3xl pb-10 uppercase">
+        SPLIT A BILL WITH {selectedFriend.name}
+      </h2>
+      <form className="grid grid-cols-3 gap-x-3 gap-y-5">
         <label>💰 Bill Value</label>
         <input
-          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2 rounded'
-          type='text'
+          className="text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2  rounded"
+          type="text"
         />
 
         <label> 👨 Your Expense</label>
         <input
-          className='text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2 rounded'
-          type='text'
+          className="text-gray-800 px-3 py-1 bg-slate-300 outline-none col-span-2  rounded"
+          type="text"
         />
 
-        <label> 👩‍💼👨‍💼 X's Expense</label>
+        <label> 👩‍💼👨‍💼 {selectedFriend.name}'s Expense</label>
         <input
-          className='text-gray-800 px-3 py-1 rounded  outline-none col-span-2'
-          type='text'
+          className="text-gray-800 px-3 py-1 rounded  outline-none col-span-2 "
+          type="text"
           disabled
         />
 
         <label>🤑 Who is paying the bill? </label>
         <select
-          className='outline-none text-gray-800 bg-slate-300 px-3 py-1 rounded col-span-2'
-          name=''
-          id=''
+          className="outline-none text-gray-800 bg-slate-300 px-3 py-1 rounded col-span-2 "
+          name=""
+          id=""
         >
-          <option className='py-1' value='you'>
+          <option className="py-1" value="you">
             You
           </option>
-          <option value='friend'>X</option>
+          <option value="friend">{selectedFriend.name}</option>
         </select>
-        <button className=' col-start-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-7 rounded '>
+        <button className=" col-start-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-7 rounded ">
           Split Bill
         </button>
       </form>

@@ -26,11 +26,22 @@ function App() {
       balance: 0,
     },
   ];
+
   const [friends, setFriends] = useState(initialFriends);
+  const [selectedFriend, setSelectedFriend] = useState(null);
+
+  const handleSelectFriend = (friend) => {
+    // selectedFriend.id === friend.id
+    //   ? setSelectedFriend(friend)
+    //   : setSelectedFriend({});
+    setSelectedFriend((selected) =>
+      selected?.id === friend.id ? null : friend
+    );
+  };
   return (
     <>
-      <div className='absolute w-screen bg-slate-900 text-white min-h-screen'>
-        <div className=' w-[85%] mx-auto'>
+      <div className="absolute w-screen bg-slate-900 text-white min-h-screen">
+        <div className=" w-[85%] mx-auto">
           {/* <div className=' bg-slate-800 p-5 m-10'>
             <p>Name</p>
             <p className=' text-green-700'>You owe clark</p>
@@ -39,12 +50,17 @@ function App() {
             </button>
           </div> */}
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-24  my-10'>
-            <div className=''>
-              <FriendsList friends={friends} setFriends={setFriends} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24  my-10">
+            <div className="">
+              <FriendsList
+                friends={friends}
+                setFriends={setFriends}
+                onSelectFriend={handleSelectFriend}
+                selectedFriend={selectedFriend}
+              />
             </div>
-            <div className='px-10 py-10 lg:px-0'>
-              <SplitBill />
+            <div className="px-10 py-10 lg:px-0">
+              {selectedFriend && <SplitBill selectedFriend={selectedFriend} />}
             </div>
           </div>
         </div>
