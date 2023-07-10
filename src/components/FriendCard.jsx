@@ -14,17 +14,17 @@ const FriendCard = ({ friend }) => {
             <p className='text-white font-bold'>{friend.name}</p>
             {friend.balance < 0 && (
               <p className=' text-red-600 text-sm'>
-                You owe {friend.name} ${Math.abs(friend.balance)}{" "}
+                You owe {friend.name} ${Math.abs(friend.balance)}
               </p>
             )}
             {friend.balance > 0 && (
-              <p className=' text-green-700 text-sm'>
-                {friend.name} owes you ${Math.abs(friend.balance)}{" "}
+              <p className=' text-green-600 text-sm'>
+                {friend.name} owes you ${Math.abs(friend.balance)}
               </p>
             )}
             {friend.balance === 0 && (
               <p className=' text-gray-400 text-sm'>
-                You and {friend.name} are even{" "}
+                You and {friend.name} are even
               </p>
             )}
             {/* <p className="text-gray-300">{friend.profile}</p> */}

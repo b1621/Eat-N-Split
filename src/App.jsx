@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FriendsList from "./components/FriendsList";
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
       balance: 0,
     },
   ];
+  const [friends, setFriends] = useState(initialFriends);
   return (
     <>
-      <div className='absolute w-screen bg-slate-900 text-white h-screen'>
+      <div className='absolute w-screen bg-slate-900 text-white min-h-screen'>
         <div className=' w-[80%] mx-auto'>
           {/* <div className=' bg-slate-800 p-5 m-10'>
             <p>Name</p>
@@ -38,7 +40,7 @@ function App() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-5  my-10'>
             <div className=''>
-              <FriendsList initialFriends={initialFriends} />
+              <FriendsList friends={friends} setFriends={setFriends} />
             </div>
             <div className=' border px-10 lg:px-0'>
               <div className=' bg-slate-800 p-5 my-10'>some text</div>
