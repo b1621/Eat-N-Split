@@ -38,6 +38,22 @@ function App() {
       selected?.id === friend.id ? null : friend
     );
   };
+
+  const handleSplitBill = (value) => {
+    console.log(value);
+    setFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? {
+              ...friend,
+              balance: friend.balance + value,
+            }
+          : friend
+      )
+    );
+
+    setSelectedFriend(null);
+  };
   return (
     <>
       <div className="absolute w-screen bg-slate-900 text-white min-h-screen">
@@ -60,7 +76,12 @@ function App() {
               />
             </div>
             <div className="px-10 py-10 lg:px-0">
-              {selectedFriend && <SplitBill selectedFriend={selectedFriend} />}
+              {selectedFriend && (
+                <SplitBill
+                  selectedFriend={selectedFriend}
+                  onSplitBill={handleSplitBill}
+                />
+              )}
             </div>
           </div>
         </div>
